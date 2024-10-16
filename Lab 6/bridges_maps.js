@@ -37,15 +37,15 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Define a custom icon for the bridges
 const bridgeIcon = L.icon({
-    iconUrl: 'bridge.png', // Path to your standard bridge icon
-    iconSize: [32, 32], // Adjust based on your icon
-    iconAnchor: [16, 32], // Center the icon
+    iconUrl: 'bridge.png', 
+    iconSize: [32, 32], 
+    iconAnchor: [16, 32], 
 });
 
 // Define a custom icon for the longest bridge
 const longestBridgeIcon = L.icon({
-    iconUrl: 'longest-bridge.png', // Path to your longest bridge icon
-    iconSize: [32, 32], // Adjust based on your icon
+    iconUrl: 'longest-bridge.png',
+    iconSize: [32, 32], 
     iconAnchor: [16, 32],
 });
 
