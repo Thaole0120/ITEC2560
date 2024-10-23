@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Generator</title>
+</head>
+<body>
+    
+    <h1>List Generator</h1>
+
+
+    <input id="new-list-item-text" placeholder="Enter item ( 1-50 characters)">
+
+    <button id="add-new-item">Add new list item</button>
+
+    <ul id="list-of-items">
+        <!-- empty, will add elements with JS-->
+         <!-- li elements are contained within ul elements-->
+          <!-- li elements are child elements of ul elements -->
+
+          <!--<li>Example</li>-->
+    </ul>
+    
+    <!--Button to clear all items from the list-->
+    <button id="clear-list">Clear</button> 
+
+
+    <script>
+
+        // todo fill this in
+        // remember to add # to select by ID 
+            let newListItemTextInputElement = document.querySelector('#new-list-item-text')
+
+            let addNewItemButtonElement = document.querySelector('#add-new-item')
+
+            let listOfItemsElement = document.querySelector('#list-of-items')
+
+            let clearButton = document.querySelector('#clear-list')
+
+            let itemCount = 0 //Counter to track the number of items in the list
+
+            //Provide a function definition, code that runs when the click happens
+            addNewItemButtonElement.addEventListener('click', function(){
+                let newInputText = newListItemTextInputElement.value.trim()
+                console.log(newInputText) //Log the input for debugging
+                
+                // Validate input, check if input is empty
+            if (newInputText.length === 0) {
+                // Ignore empty input
+                return;
+            }
+
+            // Check if input length exceeds 50 characters
+            if (newInputText.length > 50) {
+                alert("Error: Text must be 1 to 50 characters long.");
+                return;
+            }
+
+            //check if item count exceeds 10
+            if (itemCount >= 10) {
+                alert("You cannot add more than 10 items to the list.");
+                return;
+            }
+
+
+                //make new li item, set the text to the text the user entered
+                //specify the type of element, use a valid HTML tag
+                let newListItemElement = document.createElement('li')
+                newListItemElement.textContent = newInputText
+                listOfItemsElement.appendChild(newListItemElement)
+
+                //clear the input by setting the value to an empty string
+                newListItemTextInputElement.value =''
+                itemCount++ //Increment the item count
+            
+                })  
+                
+                // Add event listener for clearing the list
+            clearButton.addEventListener('click', function() {
+            listOfItemsElement.innerHTML = ''; // Clear all list items
+            itemCount = 0; // Reset item count to zero 
+                
+            })
+
+    </script>
+</body>
+</html>
