@@ -19,3 +19,5 @@ animals.forEach(animal => console.log(animal))
 
 
 
+
+
